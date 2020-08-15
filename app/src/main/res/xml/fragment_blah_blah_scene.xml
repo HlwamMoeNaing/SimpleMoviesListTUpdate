@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <Transition
+        app:constraintSetEnd="@+id/collapsed"
+        app:constraintSetStart="@+id/expanded"
+        app:duration="300"
+        app:motionInterpolator="easeInOut">
+
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:maxAcceleration="200"
+            app:touchAnchorId="@+id/playerContainer"
+            app:touchAnchorSide="top" />
+
+
+        <KeyFrameSet>
+            <KeyAttribute
+                app:framePosition="0"
+                app:motionTarget="@id/player">
+                <CustomAttribute
+                    app:attributeName="EndPadding"
+                    app:customDimension="255dp" />
+            </KeyAttribute>
+
+            <KeyAttribute
+                app:framePosition="20"
+                app:motionTarget="@id/player">
+                <CustomAttribute
+                    app:attributeName="EndPadding"
+                    app:customDimension="0dp" />
+            </KeyAttribute>
+
+
+            <KeyPosition
+                app:curveFit="linear"
+                app:framePosition="90"
+                app:motionTarget="@+id/playerContainer"
+                app:percentWidth="0" />
+
+
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="0"
+                app:motionTarget="@+id/marge_recycler" />
+
+            <KeyAttribute
+                android:alpha="1"
+                app:framePosition="100"
+                app:motionTarget="@+id/marge_recycler" />
+
+
+        </KeyFrameSet>
+
+    </Transition>
+
+
+    <ConstraintSet android:id="@+id/expanded">
+        <Constraint
+            android:id="@+id/playerContainer"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.0" />
+
+        <Constraint
+            android:id="@id/player"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/playerContainer"
+            app:layout_constraintEnd_toEndOf="@+id/playerContainer"
+            app:layout_constraintStart_toStartOf="@id/playerContainer"
+            app:layout_constraintTop_toTopOf="@id/playerContainer" />
+
+
+        <Constraint
+            android:id="@+id/scroll_scroll"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/playerContainer" />
+
+
+<!--        <Constraint-->
+<!--            app:layout_constraintBottom_toTopOf="@+id/playerContainerFrame"-->
+<!--            android:id="@+id/youTubePlayerView" />-->
+<!--    -->
+<!--        <Constraint-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            android:id="@+id/youTubePlayerView2" />-->
+<!--        <Constraint-->
+<!--            app:layout_editor_absoluteY="121dp"-->
+<!--            app:layout_editor_absoluteX="233dp"-->
+<!--            android:id="@+id/textView" />-->
+
+    </ConstraintSet>
+
+
+    <ConstraintSet android:id="@+id/collapsed">
+        <Constraint
+            android:id="@id/playerContainer"
+            android:layout_height="80dp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Constraint
+            android:id="@id/player"
+            android:layout_width="150dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintBottom_toBottomOf="@id/playerContainer"
+            app:layout_constraintDimensionRatio="H,1:1.8"
+            app:layout_constraintStart_toStartOf="@id/playerContainer"
+            app:layout_constraintTop_toTopOf="@id/playerContainer" />
+
+
+
+
+        <Constraint
+            android:id="@id/scroll_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="-1dp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/playerContainer" />
+
+        <Constraint android:id="@id/btn_pause">
+            <PropertySet app:alpha="1" />
+        </Constraint>
+
+        <Constraint android:id="@id/btn_close_close">
+            <PropertySet app:alpha="1" />
+        </Constraint>
+        <Constraint android:id="@+id/tv_video_title">
+            <PropertySet android:alpha="1" />
+        </Constraint>
+
+
+    </ConstraintSet>
+
+
+</MotionScene>

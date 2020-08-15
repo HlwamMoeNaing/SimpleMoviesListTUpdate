@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn = "navigation_view">
+
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/latest_menu"
+            android:icon="@drawable/ic_latest"
+            android:title="latest" />
+
+
+        <item
+            android:id="@+id/populer_menu"
+            android:icon="@drawable/ic_populer"
+            android:title="populer" />
+
+
+        <item
+            android:id="@+id/top_menu"
+            android:icon="@drawable/ic_top"
+            android:title="Top" />
+
+
+    </group>
+
+    <item android:title="Control">
+        <menu>
+            <item
+                android:id="@+id/share_menu"
+                android:icon="@drawable/ic_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/about_menu"
+                android:icon="@drawable/ic_about"
+                android:title="About" />
+
+        </menu>
+    </item>
+
+
+</menu>

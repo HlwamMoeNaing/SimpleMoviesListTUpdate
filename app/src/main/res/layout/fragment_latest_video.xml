@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/mainBackground"
+        android:orientation="vertical"
+        tools:context=".fragment.videofragments.LatestVideoFragment">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <!--        android:theme="@style/AppTheme.AppBarOverlay">-->
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_home"
+                app:titleTextColor="@color/colorAccent"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/mainBackground"
+                >
+               <androidx.constraintlayout.widget.ConstraintLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent">
+                   <ImageView
+                       android:layout_width="wrap_content"
+                       android:layout_height="35dp"
+                       android:id="@+id/menu_open"
+                       app:layout_constraintTop_toTopOf="parent"
+                       app:layout_constraintLeft_toLeftOf="parent"
+                       app:layout_constraintBottom_toBottomOf="parent"
+                       android:onClick="openCloseNavigationDrawer"
+                       android:src="@drawable/menu_open"/>
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Home"
+                       android:textColor="@color/colorAccent"
+                       app:layout_constraintTop_toTopOf="parent"
+                       app:layout_constraintStart_toEndOf="@+id/menu_open"
+                       app:layout_constraintBottom_toBottomOf="parent"
+                       android:textSize="20sp"
+                       android:textStyle="bold"
+                       android:layout_marginStart="8dp"/>
+               </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            </androidx.appcompat.widget.Toolbar>
+
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <ScrollView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/parent_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:id="@+id/head_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <TextView
+
+                            android:id="@+id/group_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="10dp"
+                            android:layout_toStartOf="@+id/latest_expand_latest"
+                            android:ellipsize="end"
+                            android:lines="1"
+                            android:text="Latest Movies"
+                            android:textColor="@color/textAlt"
+                            android:textSize="15dp" />
+
+                        <Button
+                            android:id="@+id/latest_expand_latest"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:background="@null"
+                            android:backgroundTint="@color/mainBackground"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:maxLength="15"
+                            android:text="View All"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="13dp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/latest_recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/head_parent"
+                        android:layout_marginStart="10dp" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/parent_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/parent_one">
+
+                    <RelativeLayout
+                        android:id="@+id/head_parent_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <TextView
+
+                            android:id="@+id/tv_tittle_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="10dp"
+                            android:layout_toStartOf="@+id/popular_expand_Latest_Frag"
+                            android:ellipsize="end"
+                            android:lines="1"
+                            android:text="Populer Movies"
+                            android:textColor="@color/textAlt"
+                            android:textSize="15dp" />
+
+                        <Button
+                            android:id="@+id/popular_expand_Latest_Frag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:background="@null"
+                            android:backgroundTint="@color/mainBackground"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:maxLength="15"
+                            android:text="View All"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="13dp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/popular_recyclerVew"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/head_parent_2"
+                        android:layout_marginStart="10dp" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/parent_two_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/parent_two">
+
+                    <RelativeLayout
+                        android:id="@+id/head_parent_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <TextView
+                            android:id="@+id/tv_tittle_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="10dp"
+                            android:layout_toStartOf="@+id/top_expand_latest"
+                            android:ellipsize="end"
+                            android:lines="1"
+                            android:text="Top Movies"
+                            android:textColor="@color/textAlt"
+                            android:textSize="15dp" />
+
+                        <Button
+                            android:id="@+id/top_expand_latest"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:background="@null"
+                            android:backgroundTint="@color/mainBackground"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:maxLength="15"
+                            android:text="View All"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="13dp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/top_recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/head_parent_3"
+                        android:layout_marginStart="10dp" />
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+        </ScrollView>
+
+
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/container_latest"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</FrameLayout>
+
+
+
+
+

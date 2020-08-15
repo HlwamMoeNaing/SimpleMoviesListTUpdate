@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/home_fragment_menu"
+        android:icon="@drawable/ic_home_fragment_menu"
+        android:title="Home"
+        android:iconTint="@color/colorAccent"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/favourite_farment_menu"
+        android:icon="@drawable/ic_favourite_fragment_menu"
+        android:title="Favourite"
+        android:iconTint="@color/colorAccent"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/setting_fragment_menu"
+        android:iconTint="@color/colorAccent"
+        android:icon="@drawable/ic_setting_fragment_menu"
+        android:title="Setting"
+        app:showAsAction="always" />
+</menu>

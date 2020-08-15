@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hmn.simplemovieslist.utils.newMotionHandler.MotinHandler xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/NewMainMotion"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/fragment_blah_blah_scene"
+    tools:context=".fragment.motionFragments.MainMotionFragment">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/scroll_scroll"
+        app:layout_constraintTop_toTopOf="@+id/playerContainer" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/playerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@color/mainBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+        android:id="@+id/player"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:layout_constraintBottom_toBottomOf="@id/playerContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/playerContainer"
+        app:showYouTubeButton="false"
+         />
+
+    <TextView
+        android:id="@+id/tv_video_title"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="180dp"
+        android:layout_marginEnd="10dp"
+        android:alpha="0"
+        android:maxLines="1"
+        android:text="@string/bar_nyar"
+        android:textColor="@color/mainText"
+        app:layout_constraintBottom_toBottomOf="@id/playerContainer"
+        app:layout_constraintEnd_toStartOf="@id/btn_pause"
+        app:layout_constraintStart_toStartOf="@id/playerContainer"
+        app:layout_constraintTop_toTopOf="@id/playerContainer" />
+
+    <ImageView
+        android:id="@+id/btn_close_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:alpha="0"
+        android:src="@drawable/ic_close"
+        app:layout_constraintBottom_toBottomOf="@id/playerContainer"
+        app:layout_constraintEnd_toEndOf="@id/playerContainer"
+        app:layout_constraintTop_toTopOf="@id/playerContainer" />
+
+    <ImageView
+        android:id="@+id/btn_pause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:alpha="0"
+        android:src="@drawable/ic_play"
+        app:layout_constraintBottom_toBottomOf="@id/playerContainer"
+        app:layout_constraintEnd_toStartOf="@+id/btn_close_close"
+        app:layout_constraintTop_toTopOf="@id/playerContainer" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/scroll_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/mainBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/playerContainer">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/marge_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="5dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.hmn.simplemovieslist.utils.newMotionHandler.MotinHandler>

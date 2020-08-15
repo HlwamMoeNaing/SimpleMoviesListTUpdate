@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/mainBackground"
+    app:layoutDescription="@xml/widget_motion_scence"
+    app:layout_constraintEnd_toEndOf="parent">
+
+    <LinearLayout
+        android:id="@+id/details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/details_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:padding="5dp"
+            android:text="Getting Start Motion Layout"
+            android:textColor="@color/mainText"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/arrow"
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_arrow" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/like_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/details">
+
+        <ImageView
+            android:id="@+id/like_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_thumb_up" />
+
+        <TextView
+            android:id="@+id/like_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1k"
+            android:textColor="@color/mainText" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dislike_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="15dp"
+        app:layout_constraintStart_toEndOf="@id/like_ll"
+        app:layout_constraintTop_toBottomOf="@id/details">
+
+        <ImageView
+            android:id="@+id/dislike_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_thumb_down" />
+
+        <TextView
+            android:id="@+id/dislike_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1k"
+            android:textColor="@color/mainText"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/livechat_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="15dp"
+        app:layout_constraintStart_toEndOf="@id/dislike_ll"
+        app:layout_constraintTop_toBottomOf="@id/details">
+
+        <ImageView
+            android:id="@+id/livechat_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_chat_room" />
+
+        <TextView
+            android:id="@+id/livechat_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Live Chat"
+            android:textColor="@color/mainText" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/share_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="15dp"
+        app:layout_constraintStart_toEndOf="@id/livechat_ll"
+        app:layout_constraintTop_toBottomOf="@id/details">
+
+        <ImageView
+            android:id="@+id/share_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_share" />
+
+        <TextView
+            android:id="@+id/share_text"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:text="Share"
+            android:textColor="@color/mainText"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/download_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="15dp"
+        app:layout_constraintStart_toEndOf="@id/share_ll"
+        app:layout_constraintTop_toBottomOf="@id/details">
+
+        <ImageView
+            android:id="@+id/download_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_file_download" />
+
+        <TextView
+            android:id="@+id/download_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Download"
+            android:textColor="@color/mainText"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/save_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="15dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@id/download_ll"
+        app:layout_constraintTop_toBottomOf="@id/details">
+
+        <ImageView
+            android:id="@+id/save_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_playlist_add" />
+
+        <TextView
+            android:id="@+id/save_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:textColor="@color/mainText"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/subscribe_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/download_ll">
+
+        <View
+            android:id="@+id/hr_1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000000" />
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/bg_txtview"
+            android:padding="10dp"
+            android:src="@drawable/ic_popularity" />
+
+        <TextView
+            android:id="@+id/channel_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/icon"
+            android:text="Mr.Bean"
+            android:textColor="@color/mainText"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/subscribe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="SUBSCRIBE"
+            android:textColor="#FF0000"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/hr_2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/icon"
+            android:layout_marginTop="5dp"
+            android:background="#000000" />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:text="@string/bar_nyar"
+        android:textColor="@color/mainText"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/subscribe_ll" />
+</androidx.constraintlayout.motion.widget.MotionLayout>
